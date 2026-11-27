@@ -493,14 +493,13 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
   .sstrip .btn{height:42px}
   .svc-head h2{font-size:18px}
   .svc-head .lbl{font-size:10px}
-  .sv{flex-direction:row}
-  .sv .ph{width:92px;height:auto;min-height:96px;flex:0 0 92px}
-  .sv{min-width:0}
-  .sv .bd{padding:11px 30px 11px 11px;min-width:0}
-  .sv .bd b{font-size:12.2px;line-height:1.3;overflow-wrap:anywhere}
-  .sv .bd span{font-size:10.5px;line-height:1.55;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .sv .go{width:20px;height:20px;right:8px;bottom:8px;font-size:11px}
-  .sv .no{left:8px;top:7px;font-size:10.5px}
+  .sv{flex-direction:column;min-width:0}
+  .sv .ph{width:100%;height:96px;min-height:0;flex:0 0 96px}
+  .sv .bd{padding:10px 10px 30px;min-width:0}
+  .sv .bd b{font-size:12.6px;line-height:1.3;overflow-wrap:anywhere}
+  .sv .bd span{font-size:10.2px;line-height:1.5;margin-top:3px;padding-right:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .sv .go{width:19px;height:19px;right:8px;bottom:8px;font-size:10px}
+  .sv .no{left:8px;top:7px;font-size:10px;height:19px;min-width:24px}
   .pn-head{padding:14px 16px 11px}
   .pn-head .tabs{margin-left:10px;gap:8px}
   .pn-head .tabs button{font-size:10px}
