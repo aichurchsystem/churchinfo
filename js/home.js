@@ -10,6 +10,17 @@
     esc(lines[0]) + (lines[1] ? '<br><em>' + esc(lines.slice(1).join(' ')) + '</em>' : '');
   document.getElementById('heroSub').textContent = S.heroSub;
 
+  /* 전국 교회 연결 현황 */
+  const all = UI.visible();
+  const cnt = (cat, st) => all.filter((i) => i.cat === cat && (!st || i.status === st)).length;
+  const goodsShare = all.filter((i) => i.cat === 'goods' && i.sub !== '차량').length;
+  document.getElementById('livePanel').innerHTML = `
+    <div class="lvhead"><span class="en">CHURCH INFO LIVE</span><b>전국 교회 연결 현황</b></div>
+    <div class="lvrow"><div class="lb"><b>사역자 연결</b><span>후임·부교역자</span></div><div class="vl">모집 중 <i>${cnt('jobs', 'recruit')}</i>건</div></div>
+    <div class="lvrow"><div class="lb"><b>교회 공간</b><span>매매·임대·양도</span></div><div class="vl">연결 중 <i>${cnt('space')}</i>건</div></div>
+    <div class="lvrow"><div class="lb"><b>목회 벼룩시장</b><span>성구·악기·비품</span></div><div class="vl">나눔 <i>${goodsShare}</i>건</div></div>
+    <div class="lvrow"><div class="lb"><b>진행 사업</b><span>100개 교회 시범</span></div><div class="vl sm">2027 화훼 공동구매</div></div>`;
+
   /* 검색 스트립 — 지역 */
   const rs = document.getElementById('qRegion');
   rs.insertAdjacentHTML('beforeend', CI.REGIONS.map((r) => `<option value="${r}">${r}</option>`).join(''));
@@ -33,11 +44,11 @@
   const PILL = { '노회소식':'노회', '사역안내':'안내', '자료업데이트':'자료', '행사':'행사' };
   const nList = document.getElementById('noticeList');
   function drawNotice(cat) {
-    const rows = UI.notices().filter((n) => !cat || n.cat === cat).slice(0, 4);
+    const rows = UI.notices().filter((n) => !cat || n.cat === cat).slice(0, 5);
     nList.innerHTML = rows.map((n) => `
       <li><a href="notice.html?cat=${encodeURIComponent(n.cat)}">
-        <span class="pill">${PILL[n.cat] || '공지'}</span>
-        <span class="ti">${esc(n.title)}</span>
+        <span class="pill ${n.pin ? 'pin' : ''}">${n.pin ? '중요' : (PILL[n.cat] || '공지')}</span>
+        <span class="ti" ${n.pin ? 'style="font-weight:600"' : ''}>${esc(n.title)}</span>
         <span class="dt">${fmtFull(n.date)}</span>
       </a></li>`).join('');
   }

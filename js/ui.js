@@ -68,7 +68,7 @@ window.UI = (function () {
 
   function settings() {
     return Object.assign({ heroTitle:'함께 세워가는 교회,\n더 넓은 사역의 길',
-      heroSub:'교회와 노회, 목회자가 연결되어 하나님의 나라를 함께 세워갑니다.',
+      heroSub:'사역자부터 교회 공간, 비품 나눔과 농어촌 연결까지 — 교회정보팀이 함께합니다.',
       heroKicker:'교회의 필요를 잇고, 함께하는 목회를 돕습니다',
       contact:'연락처·이메일은 확정 후 게시' }, db().settings);
   }
@@ -86,13 +86,14 @@ window.UI = (function () {
         <a href="${m.href}">${m.name}</a>
         <div class="sub">${m.subs.map(([t, h]) => `<a href="${h}">${t}</a>`).join('')}</div>
       </div>`).join('');
-    const cross = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="12" y1="3.4" x2="12" y2="20.6"/><line x1="5.6" y1="10.4" x2="18.4" y2="10.4"/></svg>`;
     return `
 <header class="hd">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <span class="mark" aria-hidden="true">${cross}</span>
-      <span class="tx"><span>대한예수교장로회 백석총회</span><b>교회정보팀</b></span>
+    <a class="brand" href="index.html" aria-label="대한예수교장로회 백석총회 교회정보팀">
+      <span class="logo"><img src="assets/img/baekseok-emblem.png" alt="백석총회 로고"></span>
+      <span class="org"><span>대한예수교장로회</span><b>백석총회</b></span>
+      <span class="vline"></span>
+      <span class="team">교회정보팀</span>
     </a>
     <nav class="gnb">${nav}</nav>
     <div class="right">
@@ -133,10 +134,9 @@ window.UI = (function () {
     return `
 <footer class="ft">
   <div class="wrap">
-    <b>교회정보팀</b>
-    <span class="ct">대한예수교장로회 백석총회 교회정보팀 &nbsp;·&nbsp; 문의처는 확정 후 게시됩니다</span>
-    <a href="policy.html" style="font-size:10.5px;color:#8E9CAE">이용 안내 · 개인정보처리방침</a>
-    <span class="demo">이 화면은 제작 시안입니다</span>
+    <b>대한예수교장로회 백석총회 교회정보팀</b>
+    <span class="ct">문의처 · <a href="policy.html">이용안내</a> · <a href="policy.html">개인정보처리방침</a>은 확정 후 게시됩니다</span>
+    <span class="demo">B안 · 제작 시안</span>
   </div>
 </footer>`;
   }
