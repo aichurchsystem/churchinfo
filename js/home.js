@@ -1,6 +1,6 @@
 /* 첫 화면 — 확정 시안(2026.11.27) */
 (function () {
-  const { esc, fmt, dnum, wday } = UI;
+  const { esc, fmt, fmtFull, dnum, wday } = UI;
   UI.init('');
 
   /* 대표 문구 (관리자 화면에서 변경 가능) */
@@ -38,7 +38,7 @@
       <li><a href="notice.html?cat=${encodeURIComponent(n.cat)}">
         <span class="pill">${PILL[n.cat] || '공지'}</span>
         <span class="ti">${esc(n.title)}</span>
-        <span class="dt">${fmt(n.date)}</span>
+        <span class="dt">${fmtFull(n.date)}</span>
       </a></li>`).join('');
   }
   drawNotice('');
