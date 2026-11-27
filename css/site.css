@@ -96,7 +96,7 @@ p{margin:0}
 .brand .org b{font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.03em;margin-top:3px}
 .brand .vline{width:1px;height:26px;background:rgba(196,160,96,.6);margin:0 15px}
 .brand .team{font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.03em}
-.gnb{display:flex;align-items:stretch;gap:24px;height:76px;margin-left:auto}
+.gnb{display:flex;align-items:stretch;gap:24px;height:76px;margin-left:54px}
 .gnb .it{position:relative;display:flex;align-items:center}
 .gnb .it>a{display:flex;align-items:center;height:100%;font-size:13.5px;color:#E2E7EE;letter-spacing:-0.02em}
 .gnb .it>a:hover,.gnb .it.on>a{color:var(--gold-l)}
@@ -104,7 +104,7 @@ p{margin:0}
 .gnb .it:hover .sub{display:block}
 .gnb .sub a{display:block;padding:8px 11px;font-size:12.5px;color:var(--ink-2)}
 .gnb .sub a:hover{background:var(--paper-2);color:var(--navy)}
-.hd .right{margin-left:26px;display:flex;align-items:center;gap:14px}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:14px}
 .hd .login,.hd .join{font-size:12.5px;color:#C4CEDA}
 .hd .login:hover,.hd .join:hover{color:#fff}
 .hd .sep{width:1px;height:21px;background:#46546A}
@@ -412,7 +412,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
   .wrap{width:calc(100% - 48px)}
   .hd .wrap{gap:22px}
   .brand .tx b{font-size:20px}
-  .gnb{gap:16px}
+  .gnb{gap:15px;margin-left:24px}
   .gnb .it>a{font-size:12.5px}
   .hd .right{margin-left:14px;gap:10px}
   .sstrip .f1,.sstrip .f2{width:150px}
