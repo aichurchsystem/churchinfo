@@ -167,5 +167,5 @@ window.UI = (function () {
   const catName = (k) => (CI.CATS.find((c) => c.key === k) || {}).name || k;
   const cat = (k) => CI.CATS.find((c) => c.key === k) || CI.CATS[0];
 
-  return { init, NAV, esc, fmt, fmtFull, dnum, wday, items, visible, settings, statusChip, statOf, db, save, load, catName, cat, KEY };
+  return { init, NAV, esc, fmt, fmtFull, dnum, wday, items, visible, notices, settings, statusChip, statOf, db, save, load, catName, cat, KEY };
 })();
