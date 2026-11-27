@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>관리자 (데모) | 백석총회 교회정보팀</title>
+<meta name="description" content="교회정보팀 홈페이지 관리자 화면 시안 — 승인·수정·숨김·마감 처리와 대표 문구·공지 관리.">
+<meta name="theme-color" content="#101E36">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-menu="">
+<div id="site-top"></div>
+
+<section class="phero">
+  <div class="im"><img src="assets/img/svc06.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a><span class="sp">›</span><b>관리자</b></div>
+    <h1>관리자 화면 <span style="font-size:14px;color:var(--gold-l);font-weight:500">— 데모</span></h1>
+    <p class="sub">등록된 정보의 승인·수정·숨김·마감 처리와 공지, 대표 문구·이미지를 관리합니다. 이 화면은 시안이며 실제 서버와 연결되지 않습니다.</p>
+  </div>
+</section>
+
+<div class="pagebody">
+  <div class="wrap">
+    <div class="admin-top">
+      <b>교회정보팀 관리자</b>
+      <span>김종용 목사 (데모 계정) · 오늘 2026.11.27</span>
+      <span class="badge">DEMO</span>
+    </div>
+
+    <div class="stat4" id="stats"></div>
+
+    <div class="atabs" id="atabs">
+      <button class="on" data-tab="all">전체</button>
+      <button data-tab="pending">접수 대기 <span id="cntPending"></span></button>
+      <button data-tab="open">공개 중</button>
+      <button data-tab="hidden">숨김</button>
+      <button data-tab="closed">마감</button>
+    </div>
+
+    <table class="tbl">
+      <thead><tr>
+        <th style="width:96px">번호</th><th style="width:86px">분야</th><th>제목</th>
+        <th style="width:118px">교회</th><th style="width:74px">등록일</th><th style="width:74px">상태</th><th style="width:196px">처리</th>
+      </tr></thead>
+      <tbody id="aBody"></tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--slate-2);margin-top:10px">※ 승인·숨김·마감은 이 브라우저(localStorage)에만 기록됩니다. 새로고침해도 유지되며, ‘초기화’로 되돌릴 수 있습니다.</p>
+
+    <div class="admin-grid">
+      <div class="panel">
+        <h3>대표 문구·이미지 변경</h3>
+        <div class="frow"><label>대표 제목</label><div class="ctl"><textarea id="setTitle" rows="2"></textarea><span class="hint">줄바꿈으로 두 줄을 나눕니다. 둘째 줄은 금색으로 표시됩니다.</span></div></div>
+        <div class="frow"><label>보조 문구</label><div class="ctl"><input id="setSub" type="text"></div></div>
+        <div class="frow"><label>대표 이미지</label><div class="ctl">
+          <input id="setImg" type="file" accept="image/*">
+          <div class="thumb"><img id="setImgPrev" src="../assets/img/hero.jpg" alt="대표 이미지 미리보기"></div>
+          <span class="hint">미리보기만 제공됩니다. 실제 교체는 서버 업로드 후 반영됩니다.</span>
+        </div></div>
+        <div class="frow"><label>문의 표기</label><div class="ctl"><input id="setContact" type="text" placeholder="연락처·이메일은 확정 후 게시"></div></div>
+        <div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-navy btn-sm" id="saveSet" type="button">저장</button><button class="btn btn-line btn-sm" id="resetAll" type="button">전체 초기화</button></div>
+      </div>
+
+      <div class="panel">
+        <h3>공지 등록</h3>
+        <div class="frow"><label>분류</label><div class="ctl"><select id="nCat"><option>노회소식</option><option>사역안내</option><option>자료업데이트</option><option>행사</option></select></div></div>
+        <div class="frow"><label>제목</label><div class="ctl"><input id="nTitle" type="text" placeholder="공지 제목"></div></div>
+        <div class="frow"><label>내용</label><div class="ctl"><textarea id="nBody" rows="3" placeholder="공지 내용"></textarea></div></div>
+        <button class="btn btn-navy btn-sm" id="addNotice" type="button">공지 등록</button>
+        <div id="noticeAdminList" style="margin-top:12px;font-size:12px;color:var(--slate)"></div>
+      </div>
+    </div>
+
+    <div class="panel" id="editPanel" style="display:none;margin-top:14px">
+      <h3>정보 수정 <span id="editNo" style="font-size:11.5px;color:var(--slate-2);font-weight:400"></span></h3>
+      <div class="frow"><label>제목</label><div class="ctl"><input id="eTitle" type="text"></div></div>
+      <div class="frow"><label>교회</label><div class="ctl"><input id="eChurch" type="text"></div></div>
+      <div class="frow"><label>지역</label><div class="ctl"><input id="eRegion" type="text"></div></div>
+      <div class="frow"><label>한 줄 요약</label><div class="ctl"><textarea id="eSummary" rows="2"></textarea></div></div>
+      <div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-gold btn-sm" id="saveEdit" type="button">수정 저장</button><button class="btn btn-line btn-sm" id="cancelEdit" type="button">취소</button></div>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

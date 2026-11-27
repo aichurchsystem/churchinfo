@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>교회정보팀 | 대한예수교장로회 백석총회</title>
+<meta name="description" content="대한예수교장로회 백석총회 교회정보팀 — 사역자 연결, 교회 공간, 비품 나눔, 농어촌 연결, 공동구매와 자료를 한곳에서 안내합니다.">
+<meta name="theme-color" content="#101E36">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-menu="">
+<div id="site-top"></div>
+
+<section class="hero">
+  <div class="bg"><img src="assets/img/hero.jpg" alt="아침 빛이 드는 교회 예배당 외관"></div>
+  <div class="scrim"></div>
+  <div class="wrap">
+    <div class="inner">
+      <div class="kicker" id="heroKicker">CHURCH INFORMATION TEAM</div>
+      <h1 id="heroTitle">함께 세워가는 교회,<br><em>더 넓은 사역의 길</em></h1>
+      <div class="rule"></div>
+      <p class="lede" id="heroSub">교회와 노회, 목회자가 연결되어 하나님의 나라를 함께 세워갑니다.</p>
+      <div class="acts">
+        <a class="btn btn-gold" href="search.html">정보 찾기</a>
+        <a class="btn btn-ghost" href="register.html">정보 등록하기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sstrip">
+  <div class="wrap">
+    <form action="search.html" method="get" id="homeSearch">
+      <div class="fld f1">
+        <label for="qField">분야</label>
+        <select id="qField" name="field">
+          <option value="">전체</option>
+          <option value="jobs">사역자 연결</option>
+          <option value="space">교회 공간</option>
+          <option value="goods">비품 나눔·거래</option>
+          <option value="rural">농어촌 연결</option>
+          <option value="family">목회자 가정 지원</option>
+          <option value="groupbuy">공동구매·제휴</option>
+        </select>
+      </div>
+      <span class="div"></span>
+      <div class="fld f2">
+        <label for="qRegion">지역</label>
+        <select id="qRegion" name="region">
+          <option value="">전체</option>
+        </select>
+      </div>
+      <span class="div"></span>
+      <div class="fld f3">
+        <label for="qWord">검색어</label>
+        <input id="qWord" type="text" name="q" placeholder="찾으시는 정보를 입력하세요">
+      </div>
+      <button class="btn btn-navy" type="submit">검색</button>
+    </form>
+  </div>
+</section>
+
+<section class="svc">
+  <div class="wrap">
+    <div class="svc-head">
+      <div>
+        <div class="lbl">주요 서비스</div>
+        <h2>필요한 분야를 골라 바로 연결하세요</h2>
+      </div>
+      <a class="more" href="search.html">전체 보기 ›</a>
+    </div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<section class="panels">
+  <div class="wrap">
+    <div class="pn">
+      <div class="pn-head">
+        <b>공지사항</b>
+        <div class="tabs" id="noticeTabs">
+          <button class="on" data-cat="">전체</button>
+          <button data-cat="노회소식">노회소식</button>
+          <button data-cat="사역안내">사역안내</button>
+          <button data-cat="자료업데이트">자료업데이트</button>
+        </div>
+        <a class="more" href="notice.html">더보기 +</a>
+      </div>
+      <div class="pn-body"><ul class="nl" id="noticeList"></ul></div>
+    </div>
+
+    <div class="pn">
+      <div class="pn-head">
+        <b>노회 일정</b>
+        <div class="tabs" id="schTabs">
+          <button class="on" data-tag="">전체</button>
+          <button data-tag="예정">예정</button>
+          <button data-tag="진행중">진행중</button>
+          <button data-tag="지난일정">지난일정</button>
+        </div>
+        <a class="more" href="presbytery.html#schedule">더보기 +</a>
+      </div>
+      <div class="pn-body"><ul class="sl" id="schList"></ul></div>
+    </div>
+
+    <div class="pn">
+      <div class="pn-head"><b>추천 바로가기</b></div>
+      <div class="pn-body">
+        <form class="sc-search" action="search.html" method="get">
+          <input type="text" name="q" placeholder="통합검색" aria-label="통합검색">
+          <button type="submit">검색</button>
+        </form>
+        <div class="sc-grid">
+          <a href="register.html?cat=jobs"><i>＋</i>후임 사역자 등록</a>
+          <a href="register.html?cat=space"><i>＋</i>교회 건물 등록</a>
+          <a href="family.html"><i>♡</i>목회자 가정(결혼) 정보</a>
+          <a href="register.html?cat=goods"><i>＋</i>물품 나눔 등록</a>
+          <a href="data.html"><i>▤</i>노회 서식 양식</a>
+          <a href="data.html?cat=임직자료"><i>▤</i>임직 자료</a>
+          <a href="about.html#faq"><i>?</i>자주 묻는 질문</a>
+          <a href="search.html?sort=new"><i>◷</i>최근 등록 정보</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
